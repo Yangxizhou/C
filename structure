@@ -16,3 +16,4 @@ int main()
 		printf("姓名：%s\n年龄：%d\n身高：%d\n", pd->name, pd->age, pd->hight);
 		//printf("姓名：%s\n年龄：%d\n身高：%d\n", *pd->name, *pd->age, *pd.higth);此行指针变量使用错误
 	return 0;
+}
