@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <Windows.h>
+struct classmates
+{
+	char name[10];
+	short age;
+	short hight;
+};
+//若要修改字符子变量，使用strcpy(a04.name,"刘")
+int main()
+{
+	struct classmates a04 = { "杨", 20, 174 };
+		printf("姓名：%s\n年龄：%d\n身高：%d\n", a04.name, a04.age, a04.hight);
+		struct classmates* pd = &a04;
+		printf("姓名：%s\n年龄：%d\n身高：%d\n", pd->name, pd->age, pd->hight);
+		//printf("姓名：%s\n年龄：%d\n身高：%d\n", *pd->name, *pd->age, *pd.higth);此行指针变量使用错误
+	return 0;
