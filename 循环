@@ -358,3 +358,43 @@ int main()
 	printf("%d %s\n", sz,a);
 	return 0;
 }
+
+int main()
+{
+	char name[20] = { 0 };
+	char Name[20] = { 0 };
+	char password[20] = { 0 };
+	char Password[20] = { 0 };
+	char rest;
+	int i = 0;
+	printf("请输入注册账号：\n");
+	scanf("%s", name);
+	rest=getchar();
+	printf("请输入设定的密码：\n");
+	scanf("%s", password);
+	rest=getchar();
+	printf("请输入账号：\n");
+	scanf("%s", Name);
+	printf("请输入密码：\n");
+	for ( ; i < 3; i++)
+	{
+		scanf("%s", Password);
+		if (0 == strcmp(name, Name) && 0 == strcmp(password, Password))//等号不能用来比较字符串相等，需要库函数strcmp(相等返回0)
+		{
+			printf("登录成功\n");
+			break;
+		}
+		else
+		{
+			if (i < 2)
+			{
+				printf("登录失败,请重新输入：\n");
+			}
+		}
+	}
+	if (i == 3)
+	{
+		printf("登录大失败，请不要再试\n");
+	}
+	return 0;
+}
