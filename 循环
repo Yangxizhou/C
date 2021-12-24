@@ -479,3 +479,75 @@ int main()
 	printf("%f\n", sum);
 	return 0;
 }
+
+//猜数字游戏：电脑随机生成，循环使用
+void menu(void)
+{
+	printf("***************************\n");
+	printf("******1> 开始游戏**********\n");
+	printf("******0> 退出游戏**********\n");
+	printf("***************************\n");
+}
+void game()
+{
+	//生成一个随机数，然后猜数字。msdn
+	int ret = 0;
+	int guess = 0;
+	ret = rand()%100+1;   //生成由0到0x7fff之间的一个整数,取模后可使其范围变化
+	//printf("%d\n",ret);
+	while(1)
+	{
+		printf("请猜数字：>");
+		scanf("%d", &guess);
+		if (guess > ret)
+			printf("猜大了\n");
+		else if (guess < ret)
+			printf("猜小了\n");
+		else if (guess == ret)
+		{ 
+			printf("恭喜你猜对了\n");
+			break;
+		}
+	}
+
+}
+
+int main()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));		//时间戳:计算机当前时间与计算机起始时间的差值1970.1.1 0：0：0
+	do
+	{
+		menu();
+		printf("请输入：\n");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("无效输入\n");
+			break;
+		}
+	} while (input == 1);
+	return 0;
+}
+
+//乘法口诀表
+int main()
+{
+	int i, j;
+	for ( i=1; i <= 9; i++)
+	{
+		for (j = 1; j <= i; j++)
+		{
+			printf("%d*%d=%-2d ", i, j, i * j);//打印格式对齐
+		}
+		printf("\n");
+	}
+	return 0;
+}
