@@ -4,6 +4,26 @@
 #include <stdlib.h>
 #include <math.h>
 
+//打印闰年
+int is_leap_year(int x)
+{
+	if ((x%4 == 0 && x % 100 != 0) || x % 400 == 0)
+	{
+		return 1;
+	}
+	return 0;
+}
+int main()
+{
+	int year = 0;
+	for (year = 1000; year <= 2000; year++)
+	{
+		if(is_leap_year(year) == 1)
+			printf("%d ",year);
+	}
+	return 0;
+}
+
 //打印100至200之间的素数，判断一个数是不是素数；调用函数形式
 int is_prime(int i)
 {
